@@ -1,0 +1,179 @@
+/*:root {
+}*/
+
+/*Home Page*/
+.home-header {
+    color: rgb(253, 166, 192);
+    font-family: "Matemasie", sans-serif;
+    font-size: 120px;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.butt {
+    width: 290px;
+    height: 90px;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 60px;
+    background-color: rgb(227, 86, 121); 
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 1.5;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+}
+
+.butt:hover {
+    box-shadow: 3px 3px rgb(235, 157, 170);
+    background-color: rgb(175, 68, 95);
+    transform: translateY(20%);
+}
+
+.not-home-headers{
+    color: rgb(253, 166, 192);
+    font-family: "Matemasie", sans-serif;
+    font-size: 70px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.navbar {
+    background-color: rgb(253, 166, 192);
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.navbar a{
+    color: white;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 40px;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: rgb(227, 86, 121); 
+}
+
+.home-container {
+    width: max-content;
+    height: max-content;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin-top: 80px;
+}
+
+/*Create Page*/
+form {
+    display: block;
+}
+
+input {
+    display: block;
+    margin-bottom: 30px;
+}
+
+.title-in {
+    width: 400px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: rgb(209, 73, 107);
+}
+
+/*now within a container
+want textarea to be left of container
+the section containing list of words will be to the right*/
+textarea {
+    width: 1200px;
+    height: 500px;
+    overflow-y: auto;
+    resize: none;
+    overflow-wrap: break-word; /* Ensures that long words break to the next line */
+    white-space: pre-wrap; /* Preserves whitespace and allows line breaks */
+    font-family: "Gloria Hallelujah", cursive;
+    word-spacing: 4px;
+    font-size: 20px;
+    line-height: 2;
+}
+
+/*Flash Messages*/
+.flash-message {
+    width: 99%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.flash-success {
+    background-color: #e6ffe6;
+    color: green;
+    border: 1px solid green;
+}
+
+.flash-error {
+    background-color: #ffe6e6;
+    color: red;
+    border: 1px solid red;
+}
+
+.flash-info {
+    background-color: #e6f7ff;
+    color: blue;
+    border: 1px solid blue;
+}
+
+.flash-message .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/*Read Posts*/
+.read-container {
+    width: 760px;
+    height: max-content;
+    background-color:rgb(227, 86, 121);
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    line-height: 1.5;
+    color: white;
+    border-radius: 15px;
+}
+
+.read-container a{
+    width: 80px;
+    height: 30px;
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    cursor: pointer;
+    border: 2px solid rgb(146, 37, 64);
+    border-radius: 5px;
+    background-color: white;
+    color: rgb(227, 86, 121);
+}

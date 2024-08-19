@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>{% block title %}Home{% endblock %}</title>
+
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+        </style>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Matemasie&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Matemasie&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Jersey+10&family=Matemasie&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Jersey+10&family=Matemasie&family=Sankofa+Display&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" id="home" href="/">Home</a>
+                <a class="nav-item nav-link" id="home" href="/madlibs">MadLibs</a>
+                <a class="nav-item nav-link" id="create" href="/create">Create MadLibs</a>
+                <a class="nav-item nav-link" id="home" href="/">Learn</a>
+            </div>
+        </nav>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                  <li class="flash-message flash-{{ category }}">
+                    {{ message }}
+                    <button class="close-btn" onclick="this.parentElement.style.display='none';">&times;</button>
+                </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        
+        <div class="container">
+            {% block content%}
+            {% endblock %}
+        </div>
+
+        {% block javascript %}
+        <script type="text/javascript">
+            function deletePost(noteId) {
+                fetch("/madlibs/delete-post", {
+                    method: "POST",
+                    body: JSON.stringify({ noteId: noteId }),
+                }).then((_res) => {
+                    window.location.href = "/madlibs";
+                });
+            }
+        </script> 
+        {% endblock %}  
+
+        {% block javascript %}
+        <script type="text/javascript">
+            function choosePost(postId) {
+                fetch("/create/choose", {
+                    method: "POST",
+                    body: JSON.stringify({ postId: postId }),
+                }).then((_res) => {
+                    window.location.href = "/madlibs";
+                });
+            }
+        </script> 
+        {% endblock %} 
+
+    </body>
+</html>

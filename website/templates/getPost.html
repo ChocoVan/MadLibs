@@ -1,0 +1,17 @@
+{% extends "base.html" %}{% block title%}MadLibs{% endblock %}
+{% block content %}
+
+<h1 class="not-home-headers" align="center">LOOK</h1>
+
+{% for text in posts %}
+<div class="read-container">
+    <h1 align="center">{{text.title}}</h1>
+    {{ text.data }}
+    <div>
+        <a onClick="deletePost({{ text.id }})">Delete</a>
+    </div>
+</div>
+<br />
+{% endfor %}
+
+{% endblock %}

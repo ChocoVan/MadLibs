@@ -1,0 +1,23 @@
+{% extends "base.html" %}{% block title%}MadLibs{% endblock %}
+{% block content %}
+<h1 class="not-home-headers" align="center">CREATE</h1>
+<div class="create-container" align="center">
+    <form method='POST'>
+        <label for="title">TITLE</label>
+        <input
+            class="title-in"
+            type="title" 
+            id="title"
+            name="title"
+            placeholder="Enter the title of your MadLibs"
+        ></input>
+        <label for="data">CONTENT</label>
+            <textarea name="post" id="post"></textarea>
+        <div>
+            <input type="submit" value="Save" />
+        </div>
+    </form>
+    <!--the words which need to be replaced in play will appear 
+    here as an ordered list that goes from top to bottom-->
+</div>
+{% endblock %}
